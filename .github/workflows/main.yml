@@ -1,0 +1,25 @@
+# GitHub Actions を起動するトリガーの設定
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+
+    # 実行環境の設定
+    # Linux, macOS, Window から選べる
+    # ここではLinuxを指定
+    runs-on: ubuntu-latest
+
+    steps:
+      # ソースコードをGitHubからダウンロードしてくる
+      - uses: actions/checkout@v3
+
+      # Perlをインストールする
+      - uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: "5.38"
+
+      # テスト実行
+      - name: Test
+        run: "prove -lv t"
