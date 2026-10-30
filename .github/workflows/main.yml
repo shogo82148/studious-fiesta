@@ -13,10 +13,10 @@ jobs:
 
     steps:
       # ソースコードをGitHubからダウンロードしてくる
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.7.0
 
       # Perlをインストールする
-      - uses: shogo82148/actions-setup-perl@v1
+      - uses: shogo82148/actions-setup-perl@v1.44.4
         with:
           perl-version: "5.38"
 
